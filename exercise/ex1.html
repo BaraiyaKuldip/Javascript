@@ -14,11 +14,11 @@
 
     var monthlyIncome = prompt("Enter Your Monthly Income");
 
-    console.log('Monthly Income = ${monthlyIncome}');
+    console.log("Monthly Income = " + monthlyIncome);
     
     var yearlyIncome = monthlyIncome * 12;
     
-    console.log('Gross Income = ${yearlyIncome}');
+    console.log("Gross Income = " + yearlyIncome);
 
     var incomeTax = 0;
 
@@ -28,44 +28,44 @@
     {
         incomeTax = (yearlyIncome * 5) / 100;
         
-        console.log('Income Tax = ${incomeTax}');
+        console.log("Income Tax = " + incomeTax);
         
         netIncome = yearlyIncome - incomeTax;
         
-        console.log('Net Income = ${netIncome}');
+        console.log("Net Income = " + netIncome);
     }
 
     else if (yearlyIncome < 300000 && yearlyIncome >= 500000)
     {
         incomeTax = (yearlyIncome * 10) / 100;
         
-        console.log('Income Tax = ${incomeTax}');
+        console.log("Income Tax = " + incomeTax);
         
         netIncome = yearlyIncome - incomeTax;
         
-        console.log('Net Income = ${netIncome}');
+        console.log("Net Income = " + netIncome);
     }
 
     else if (yearlyIncome < 500000 && yearlyIncome >= 800000)
     {
         incomeTax = (yearlyIncome * 20) / 100;
         
-        console.log('Income Tax = ${incomeTax}');
+        console.log("Income Tax = " + incomeTax);
         
         netIncome = yearlyIncome - incomeTax;
         
-        console.log('Net Income = ${netIncome}');
+        console.log("Net Income = " + netIncome);
     }
 
     else if (yearlyIncome >= 800000)
     {
         incomeTax = (yearlyIncome * 30) / 100;
         
-        console.log('Income Tax = ${incomeTax}');
+        console.log("Income Tax = " + incomeTax);
         
         netIncome = yearlyIncome - incomeTax;
         
-        console.log('Net Income = ${netIncome}');
+        console.log("Net Income = " + netIncome);
     }
 
     </script>
