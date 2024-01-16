@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+
+    <script>
+// Write a javascript programe to calculate income tax, gross income, net income from monthly income given by user
+
+    var monthlyIncome = prompt("Enter Your Monthly Income");
+
+    console.log('Monthly Income = ${monthlyIncome}');
+    
+    var yearlyIncome = monthlyIncome * 12;
+    
+    console.log('Gross Income = ${yearlyIncome}');
+
+    var incomeTax = 0;
+
+    var netIncome = 0;
+
+    if (yearlyIncome >= 300000)
+    {
+        incomeTax = (yearlyIncome * 5) / 100;
+        
+        console.log('Income Tax = ${incomeTax}');
+        
+        netIncome = yearlyIncome - incomeTax;
+        
+        console.log('Net Income = ${netIncome}');
+    }
+
+    else if (yearlyIncome < 300000 && yearlyIncome >= 500000)
+    {
+        incomeTax = (yearlyIncome * 10) / 100;
+        
+        console.log('Income Tax = ${incomeTax}');
+        
+        netIncome = yearlyIncome - incomeTax;
+        
+        console.log('Net Income = ${netIncome}');
+    }
+
+    else if (yearlyIncome < 500000 && yearlyIncome >= 800000)
+    {
+        incomeTax = (yearlyIncome * 20) / 100;
+        
+        console.log('Income Tax = ${incomeTax}');
+        
+        netIncome = yearlyIncome - incomeTax;
+        
+        console.log('Net Income = ${netIncome}');
+    }
+
+    else if (yearlyIncome >= 800000)
+    {
+        incomeTax = (yearlyIncome * 30) / 100;
+        
+        console.log('Income Tax = ${incomeTax}');
+        
+        netIncome = yearlyIncome - incomeTax;
+        
+        console.log('Net Income = ${netIncome}');
+    }
+
+    </script>
+</body>
+</html>
