@@ -7,45 +7,185 @@
      <title>exercise</title>
      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
+          <style>
+
+
+
+/* CSS */
+.button-24 {
+  background: green;
+  border: 1px solid green;
+  border-radius: 6px;
+  box-shadow: rgba(0, 0, 0, 0.1) 1px 2px 4px;
+  box-sizing: border-box;
+  color: #FFFFFF;
+  cursor: pointer;
+  display: inline-block;
+  font-family: nunito,roboto,proxima-nova,"proxima nova",sans-serif;
+  font-size: 16px;
+  font-weight: 800;
+  line-height: 16px;
+  min-height: 40px;
+  outline: 0;
+  padding: 12px 14px;
+  text-align: center;
+  text-rendering: geometricprecision;
+  text-transform: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: middle;
+}
+
+.button-24:hover,
+.button-24:active {
+  background-color: initial;
+  background-position: 0 0;
+  color: green;
+}
+
+.button-24:active {
+  opacity: .5;
+}
+
+.button-25 {
+  background: red;
+  border: 1px solid red;
+  border-radius: 6px;
+  box-shadow: rgba(0, 0, 0, 0.1) 1px 2px 4px;
+  box-sizing: border-box;
+  color: #FFFFFF;
+  cursor: pointer;
+  display: inline-block;
+  font-family: nunito,roboto,proxima-nova,"proxima nova",sans-serif;
+  font-size: 16px;
+  font-weight: 800;
+  line-height: 16px;
+  min-height: 40px;
+  outline: 0;
+  padding: 12px 14px;
+  text-align: center;
+  text-rendering: geometricprecision;
+  text-transform: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: middle;
+}
+
+.button-25:hover,
+.button-25:active {
+  background-color: initial;
+  background-position: 0 0;
+  color: red;
+}
+
+.button-25:active {
+  opacity: .5;
+}
+          </style>
 </head>
 
 <body>
-     <div class="container">
+
+     <div class="container mt-5">
           <div class="row">
                <div class="col-8 offset-2">
-                    <div class="card shadow mt-5">
-                         <div class="card-header text-bg-info h2">
-                            Enter Your Details
-                        </div>
+                    <div class="card">
+                         <div class="card-header text-bg-primary">
+                              Table Generator
+                         </div>
                          <div class="card-body">
-                              <label for="" class="form-label">Enter Your Name </label>
-                              <input type="text" class="form-control" name="name" id="name">
 
-                              <label for="" class="form-label">Enter Your E-Mail </label>
-                              <input type="email" class="form-control" name="email" id="email">
+                              <label for="" class="form-label">Enter Starting Number</label>
+                              <input type="number" class="form-control" name="first" id="first">
+                              
+                              <label for="" class="form-label">Enter Ending Number</label>
+                              <input type="number" class="form-control" name="second" id="second">
 
-                              <label for="" class="form-label">Enter Your Age </label>
-                              <input type="del" class="form-control" name="age" id="age">
-
-                              <div class="text-end mt-4">
-                                   <button class="btn btn-outline-success" onclick="userData()">Submit</button>
-                                   <button class="btn btn-outline-danger">Reset</button>
-                              </div>
+                             <div class="text-end mt-5">
+                              <button class="button-24" role="button" onclick="table()">Generate</button>
+                              <button class="button-25" role="button" onclick="Clear()">Clear All</button>
+                             </div>
                          </div>
                     </div>
                </div>
           </div>
      </div>
+
+     <div class="container mt-5">
+          <div class="raw">
+               <div class="col-8 offset-2">
+                    <div class="card">
+                         <div class="card-body">
+                              <table class="table table-bordered table-hover" id="printTable">
+
+                              </table>
+                         </div>
+                    </div>
+               </div>
+          </div>
+     </div>
+
+   
      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
           integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
           crossorigin="anonymous"></script>
+
      <script>
 
-          function printName() {
+         function table()
+         {
+          var num1 = document.getElementById('first').value ;
+          var num2 = document.getElementById('second').value ;
 
-               var name = document.getElementById('name').value ;
-               console.log(name);
+          console.log(`starting number is ${num1} and ending number is ${num2}`) ;
+
+
+          var i = 1 ; 
+          var ans = 0 ;
+          var print = '' ;
+          var j = 0 ;
+
+
+          // for(i=1;i<=10;i++)
+          // {
+          //      ans = num1 * i ;
+          //      print += `<tr><td>${num1} x ${i} = ${ans}</td></tr> ` ;
+          // }
+          // console.log(print) ;
+
+          // document.getElementById('printTable').innerHTML = print ;
+
+
+          for(j=num1;j<=num2;j++)
+          {
+               for(i=1;i<=10;i++)
+          {
+               ans = j * i ;
+               print += `<tr><td>${j} x ${i} = ${ans}</td></tr> ` ;
           }
+          
+          print += ` <tr><td></td></tr> ` ;
+
+          console.log(print) ;
+
+          document.getElementById('printTable').innerHTML = print ;
+          }
+
+         }
+
+
+         function Clear()
+         {
+          document.getElementById('first').value = '' ;
+          document.getElementById('second').value = '' ;
+          
+          document.getElementById('printTable').innerHTML = '' ;
+         }
+
+
      </script>
 </body>
 
